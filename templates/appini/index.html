@@ -1,0 +1,18 @@
+{% extends 'appini/base.html' %}
+
+{% block main_content %}
+
+{% load static %}
+{% if all_question %}
+    <h3> Here are all my Questions</h3>
+        {% for question in all_question %}
+            <li><a href="/appini/{{question.id}}/"> {{question.question_text}}</a></li>
+            <img src="{%static question.question_img %}">
+            <li><a href="/appini/{{question.id}}/"></a></li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <h3>You don't have any question</h3>
+{% endif %}
+
+{% endblock %}

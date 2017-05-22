@@ -1,0 +1,14 @@
+{% extends 'appini/base.html' %}
+
+{% block main_content %}
+
+<h1> {{ question }} </h1>
+
+<ul>
+ {% for choice in question.choice_set.all %}
+    <li>  {{choice.choice_test}} {{choice.votes}} </li>
+
+ {% endfor %}
+</ul>
+
+{% endblock %}

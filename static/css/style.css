@@ -1,0 +1,12 @@
+{% load static %}
+
+li a {
+    font-size: 20px;
+    color: red;
+}
+
+body {
+
+    color: yellow;
+    background: white url("../images/background_ini.jpg") no-repeat;
+}

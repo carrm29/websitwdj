@@ -1,0 +1,31 @@
+[uwsgi]
+
+#socket=  /tmp/uwsgi.sock
+
+#http-socket =  127.0.0.1:8001
+
+http-socket =  127.0.0.1:8001
+
+#socket = 0.0.0.0:8001
+protocol = http
+
+chmod-socket = 665
+chdir = /temp/paso/websitedj/
+plugin=python3
+
+wsgi-file = /temp/paso/websitedj/websitedj/wsgi.py
+
+#wsgi-file = /temp/paso/websitedj/websitedj/test.py
+module = websitedj.wsgi:appini
+
+
+#--module=wsgiref.simple_server:demo_app
+#processes = 4
+#threads = 2
+#stats = 127.0.0.1:9191
+
+uid = www-data
+gid = www-data
+vacuum = true
+master = true
+d = /temp/paso/websitedj/mensajes.log
